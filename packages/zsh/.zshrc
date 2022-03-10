@@ -137,6 +137,7 @@ alias gbdm="git-branch-delete-merged"
 alias vi="nvim"
 alias vim="nvim"
 alias view="nvim -R"
+alias flutter="fvm flutter"
 
 # ローカルブランチをcheckout
 gcop() {
@@ -158,5 +159,3 @@ git-branch-delete-merged() {
 # fnm
 eval "$(fnm env --use-on-cd)"
 
-# asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
