@@ -25,7 +25,8 @@ zi light romkatv/powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Oh My Zsh
+# Oh My Zsh git
+zi snippet OMZ::lib/git.zsh
 zi snippet OMZ::plugins/git/git.plugin.zsh
 
 # シンタックスハイライト
@@ -41,12 +42,7 @@ autoload -Uz compinit && compinit
 ## Gitのレポシトリをブラウザで開く(git open)
 zi ice wait'!0'; zi light paulirish/git-open
 
-## catコマンドの上位互換bat
-zi ice wait'!0' as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
-zi light sharkdp/bat
-
 ########## zi設定
-
 
 # ⌃ r で peco で history 検索
 function peco-history-selection() {
