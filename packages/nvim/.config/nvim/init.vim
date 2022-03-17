@@ -1,47 +1,49 @@
 call plug#begin('~/.config/nvim/plugged')
-    Plug 'justinmk/vim-sneak'
-        map f <Plug>Sneak_f
-        map F <Plug>Sneak_F
-        let g:sneak#label = 1
-
-    " VSCodeでは使わずVimだけに反映させたい設定の記述
+     " VSCodeでは使わずVimだけに反映させたい設定の記述
     if !exists('g:vscode')
         Plug 'preservim/nerdtree'
         Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " ファイル検索
         Plug 'junegunn/fzf.vim'
+
+        Plug 'mattn/vim-lsp-settings'
+          function! s:on_lsp_buffer_enabled() abort
+              setlocal omnifunc=lsp#complete
+              setlocal signcolumn=yes
+              if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+              nmap <buffer> gd <plug>(lsp-definition)
+              nmap buffer> <leader>rn <plug>(lsp-rename)
+              nmap <buffer> [g <plg>(lsp-previous-diagnostic)
+              nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+              nmap <buffer> ga <plug>(lsp-code-action)
+              nmap <buffer> K <plug>(lsp-hover)
+              inoremap <buffer> <expr><c-f> lsp#scroll(+4)
+              inoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+              let g:lsp_format_sync_timeout = 1000
+              autocmd! BufWritePre .tsx,.ts,.rs,.go call execute('LspDocumentFormatSync')
+
+          endfunction
+
+          augroup lsp_install
+              au!
+              autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+          augroup END
+
+          Plug 'prabirshrestha/vim-lsp'
+          Plug 'vim-airline/vim-airline'
+          Plug 'vim-airline/vim-airline-themes'
+          Plug 'tomasr/molokai' " theme
     end
 
+    Plug 'justinmk/vim-sneak' " sで2文字検索
+            map f <Plug>Sneak_f
+            map F <Plug>Sneak_F
+            let g:sneak#label = 1
     Plug 'tpope/vim-commentary' " visual modeに移動して、gcでコメントアウトが可能
-    Plug 'prabirshrestha/vim-lsp'
-    Plug 'mattn/vim-lsp-settings'
-        function! s:on_lsp_buffer_enabled() abort
-            setlocal omnifunc=lsp#complete
-            setlocal signcolumn=yes
-            if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-            nmap <buffer> gd <plug>(lsp-definition)
-           nmap buffer> <leader>rn <plug>(lsp-rename)
-            nmap <buffer> [g <plg>(lsp-previous-diagnostic)
-            nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-            nmap <buffer> ga <plug>(lsp-code-action)
-            nmap <buffer> K <plug>(lsp-hover)
-            inoremap <buffer> <expr><c-f> lsp#scroll(+4)
-            inoremap <buffer> <expr><c-d> lsp#scroll(-4)
-
-            let g:lsp_format_sync_timeout = 1000
-            autocmd! BufWritePre .tsx,.ts,.rs,.go call execute('LspDocumentFormatSync')
-
-        endfunction
-
-        augroup lsp_install
-            au!
-            autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-        augroup END
-
-    Plug 'tomasr/molokai'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
-    Plug 'machakann/vim-highlightedyank'
+    Plug 'machakann/vim-highlightedyank' " ヤンク部分をハイライト
+    Plug 'machakann/vim-sandwich' " 「saiw(」などで文字を()でサンドする
+    Plug 'thinca/vim-visualstar' " 「*」でカーソル位置の単語を検索
 call plug#end()
 
 " NERDTree SETTINGS
