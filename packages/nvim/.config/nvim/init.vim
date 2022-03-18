@@ -46,20 +46,23 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'thinca/vim-visualstar' " 「*」でカーソル位置の単語を検索
 call plug#end()
 
-" NERDTree SETTINGS
-" Start NERDTree when Vim is started without file arguments.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
-" Airline SETTINGS
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-nmap <C-p> <Plug>AirlineSelectPrevTab
-nmap <C-n> <Plug>AirlineSelectNextTab
+if !exists('g:vscode')
+  " NERDTree SETTINGS
+  " Start NERDTree when Vim is started without file arguments.
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
-colorscheme molokai
+  " Airline SETTINGS
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
+  nmap <C-p> <Plug>AirlineSelectPrevTab
+  nmap <C-n> <Plug>AirlineSelectNextTab
 
-set shell=/usr/local/bin/zsh " コマンドの際にはzshを使う
+  colorscheme molokai
+end
+
+set shell=/opt/homebrew/bin/zsh " コマンドの際にはzshを使う
 set tabstop=2 " タブに変換されるサイズ
 set shiftwidth=2 " Indentの幅
 set expandtab " タブの入力の際にスペース
