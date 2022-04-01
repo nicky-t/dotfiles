@@ -52,3 +52,5 @@ https://ry-2718.hatenablog.com/entry/2019/04/02/021006
 10 nvim https://github.com/junegunn/vim-plug vimPlug のインストール
 
 11 vim でノーマルモードに戻る際に英語に https://blog.pepo-le.com/vim-normalmode-imeoff/
+
+12 fig の導入 https://fig.io/

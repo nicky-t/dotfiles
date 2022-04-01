@@ -1,3 +1,7 @@
+# Fig pre block. Keep at the top of this file.
+export PATH="${PATH}:${HOME}/.local/bin"
+eval "$(fig init zsh pre)"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -79,7 +83,7 @@ function peco-cdr () {
   fi
 }
 zle -N peco-cdr
-bindkey '^J' peco-cdr
+bindkey '^O' peco-cdr
 
 # 入力した文字から始まるコマンドを履歴から検索し、上下矢印で補完
 autoload -U up-line-or-beginning-search
@@ -154,4 +158,7 @@ git-branch-delete-merged() {
 ## paths
 # fnm
 eval "$(fnm env --use-on-cd)"
+
+# Fig post block. Keep at the bottom of this file.
+eval "$(fig init zsh post)"
 
