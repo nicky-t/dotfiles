@@ -1,5 +1,5 @@
 [user]
-	name = nicky
+	name = nicky-t
 	email = nickytaketo0903@gmail.com
 [filter "lfs"]
 	process = git-lfs filter-process
