@@ -158,13 +158,10 @@ git-branch-delete-merged() {
 eval "$(fnm env --use-on-cd)"
 
 # ruby rbenv
-eval "$(rbenv init - zsh)"
-
-# dart
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# eval "$(rbenv init - zsh)"
 
 # fvm
 export PATH="$PATH":"$HOME/fvm/default/bin"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
