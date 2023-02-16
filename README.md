@@ -43,6 +43,8 @@ chsh -s /opt/homebrew/bin/zsh
 echo $SHELL
 ```
 
+6 Karabiner-Elements の Profile を各キーボード配列用に変更する
+
 7 iterm2 の設定を同期する
 https://ry-2718.hatenablog.com/entry/2019/04/02/021006
 
@@ -53,5 +55,3 @@ https://ry-2718.hatenablog.com/entry/2019/04/02/021006
 10 nvim https://github.com/junegunn/vim-plug vimPlug のインストール
 
 11 vim でノーマルモードに戻る際に英語に https://blog.pepo-le.com/vim-normalmode-imeoff/
-
-12 fig の導入 https://fig.io/
