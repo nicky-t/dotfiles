@@ -4,6 +4,7 @@
 
 1. キーボードとマウスパッドの速度変更
 1. Finder の設定　https://tcd-theme.com/2020/11/mac-file-path.html
+1. 1Password のインストール　https://1password.com/downloads/mac/
 1. github と連携の設定を行い、git を扱える状態にする。
 1. ホームディレクトリで以下のコマンドを実行し、dotfiles を clone する。
 
