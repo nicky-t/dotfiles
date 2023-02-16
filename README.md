@@ -34,7 +34,7 @@ sudo vi /etc/shells
 chsh コマンドでログインシェルを切り替える。
 
 ```
-chsh -s /opt/homebrew/bin/zs
+chsh -s /opt/homebrew/bin/zsh
 ```
 
 ターミナルを再起動して、ログインシェルを確認する。
