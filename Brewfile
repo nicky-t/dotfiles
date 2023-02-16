@@ -1,13 +1,13 @@
 tap "dart-lang/dart"
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/cask-fonts"
+tap "homebrew/cask-fonts" # font用
 tap "homebrew/core"
-tap "leoafarias/fvm"
-brew "bat"
+tap "leoafarias/fvm" # flutterのバージョン管理ツール
+brew "bat" # 色付きでファイルの内容を出力
 brew "cocoapods"
-brew "exa"
-brew "fnm"
+brew "exa" # lsなどの表示の際に、アイコンを表示するため
+brew "fnm" # nodeのバージョン管理ツール
 brew "git"
 brew "neovim"
 brew "peco"
