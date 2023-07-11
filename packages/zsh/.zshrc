@@ -158,11 +158,17 @@ git-branch-delete-merged() {
 eval "$(fnm env --use-on-cd)"
 
 # ruby rbenv
-# eval "$(rbenv init - zsh)"
+eval "$(frum init)"
 
 # fvm
 export PATH="$PATH":"$HOME/fvm/default/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# Go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

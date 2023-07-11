@@ -1,5 +1,7 @@
+tap "1password/tap"
 tap "homebrew/bundle"
 tap "homebrew/core"
+tap "homebrew/cask-fonts"
 brew "bat" # 色付きでファイルの内容を出力
 brew "cocoapods" # brew経由のほうが新しい
 brew "exa" # lsなどの表示の際に、アイコンを表示するため
