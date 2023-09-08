@@ -10,7 +10,7 @@ if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
     print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 source "$HOME/.zi/bin/zi.zsh"
-autoload -Uz _zi
+autoload -Uz _z次のタスクが検索機能の削除かなと思うので、軽く調査開始しますi
 (( ${+_comps} )) && _comps[zi]=_zi
 # examples here -> https://z-shell.pages.dev/docs/gallery/collection
 zicompinit # <- https://z-shell.pages.dev/docs/gallery/collection#minimal
@@ -132,7 +132,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#999999,underline"
 if builtin command -v bat > /dev/null; then
   alias cat="bat"
 fi
-alias ls="exa --icons"
+alias ls="eza --icons"
 alias gbdm="git-branch-delete-merged"
 alias vi="nvim"
 alias vim="nvim"
@@ -156,11 +156,15 @@ git-branch-delete-merged() {
 }
 
 ## paths
+# Android Studio
+export PATH=$PATH:"$HOME"/Library/Android/sdk/platform-tools
+
 # fnm
 eval "$(fnm env --use-on-cd)"
 
-# ruby rbenv
-eval "$(frum init)"
+# ruby
+# eval "$(frum init)"
+eval "$(rbenv init - zsh)"
 
 # fvm
 export PATH="$PATH":"$HOME/fvm/default/bin"
@@ -171,8 +175,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # direnv
-# export PATH="$PATH":"$HOME/.zi/plugins/paulirish---git-open/direnv"
-# eval "$(direnv hook $SHELL)"
+eval "$(direnv hook zsh)"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

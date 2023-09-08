@@ -35,15 +35,16 @@ call plug#begin('~/.config/nvim/plugged')
           Plug 'tomasr/molokai' " theme
     end
 
-    Plug 'justinmk/vim-sneak' " sで2文字検索
-            map f <Plug>Sneak_f
-            map F <Plug>Sneak_F
-            let g:sneak#label = 1
-    Plug 'tpope/vim-commentary' " visual modeに移動して、gcでコメントアウトが可能
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'machakann/vim-highlightedyank' " ヤンク部分をハイライト
-    Plug 'machakann/vim-sandwich' " 「saiw(」などで文字を()でサンドする
-    Plug 'thinca/vim-visualstar' " 「*」でカーソル位置の単語を検索
+          Plug 'justinmk/vim-sneak' " sで2文字検索
+                  map f <Plug>Sneak_f
+                  map F <Plug>Sneak_F
+                  let g:sneak#label = 1
+          Plug 'tpope/vim-commentary' " visual modeに移動して、gcでコメントアウトが可能
+          Plug 'ryanoasis/vim-devicons'
+          Plug 'machakann/vim-highlightedyank' " ヤンク部分をハイライト
+          Plug 'machakann/vim-sandwich' " 「saiw(」などで文字を()でサンドする
+          Plug 'thinca/vim-visualstar' " 「*」でカーソル位置の単語を検索
+
 call plug#end()
 
 
@@ -85,4 +86,3 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
-
